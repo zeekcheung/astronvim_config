@@ -8,6 +8,8 @@ return {
       -- add more things to the ensure_installed table protecting against community packs modifying it
       opts.ensure_installed = require("astronvim.utils").list_insert_unique(opts.ensure_installed, {
         -- "lua_ls",
+        "denols",
+        "tsserver",
       })
     end,
   },
@@ -18,9 +20,34 @@ return {
     opts = function(_, opts)
       -- add more things to the ensure_installed table protecting against community packs modifying it
       opts.ensure_installed = require("astronvim.utils").list_insert_unique(opts.ensure_installed, {
-        -- "prettier",
         -- "stylua",
+        "prettierd",
+        "eslint_d",
+        "markdownlint",
       })
+      opts.handlers = {
+        -- for prettierd
+        prettierd = function()
+          require("null-ls").register(require("null-ls").builtins.formatting.prettierd.with {
+            condition = function(utils)
+              return utils.root_has_file "package.json"
+                or utils.root_has_file ".prettierrc"
+                or utils.root_has_file ".prettierrc.json"
+                or utils.root_has_file ".prettierrc.js"
+            end,
+          })
+        end,
+        -- for eslint_d
+        eslint_d = function()
+          require("null-ls").register(require("null-ls").builtins.formatting.eslint_d.with {
+            condition = function(utils)
+              return utils.root_has_file "package.json"
+                or utils.root_has_file ".eslintrc.json"
+                or utils.root_has_file ".eslintrc.js"
+            end,
+          })
+        end,
+      }
     end,
   },
   {
