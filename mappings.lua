@@ -32,7 +32,9 @@ return {
     -- this is useful for naming menus
     ["<leader>b"] = { name = "Buffers" },
     -- quick save
-    -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
+    ["<C-s>"] = { ":w!<cr>", desc = "Save File" }, -- change description but the same command
+    -- yank all text in file
+    ["<C-a>"] = { ":%y+<cr>", desc = "Yank All" },
     -- Open Alpha Automatically When No More Buffers
     ["<leader>c"] = {
       function()
