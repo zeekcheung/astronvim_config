@@ -2,24 +2,24 @@ return {
   -- lua
   { import = "astrocommunity.pack.lua" },
   -- c/cpp
-  { import = "astrocommunity.pack.cpp" },
+  -- { import = "astrocommunity.pack.cpp" },
   -- go
-  { import = "astrocommunity.pack.go" },
+  -- { import = "astrocommunity.pack.go" },
   -- python
-  { import = "astrocommunity.pack.python" },
+  -- { import = "astrocommunity.pack.python" },
   -- markdown
   { import = "astrocommunity.pack.markdown" },
 
   -- html-css
-  { import = "astrocommunity.pack.html-css" },
+  -- { import = "astrocommunity.pack.html-css" },
   -- javascript/typescript
   -- { import = "astrocommunity.pack.typescript" },
   -- vue
-  { import = "astrocommunity.pack.vue" },
+  -- { import = "astrocommunity.pack.vue" },
   -- tailwind
-  { import = "astrocommunity.pack.tailwindcss" },
+  -- { import = "astrocommunity.pack.tailwindcss" },
   -- prisma
-  { import = "astrocommunity.pack.prisma" },
+  -- { import = "astrocommunity.pack.prisma" },
 
   -- json
   { import = "astrocommunity.pack.json" },
