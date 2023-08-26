@@ -1,2 +1,4 @@
 -- Set colorscheme to use
-return "catppuccin"
+return "tokyonight-night"
+-- return "catppuccin"
+-- return "rose-pine-moon"
