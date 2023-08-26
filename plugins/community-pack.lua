@@ -13,7 +13,7 @@ return {
   -- html-css
   -- { import = "astrocommunity.pack.html-css" },
   -- javascript/typescript
-  -- { import = "astrocommunity.pack.typescript" },
+  { import = "astrocommunity.pack.typescript" },
   -- vue
   -- { import = "astrocommunity.pack.vue" },
   -- tailwind
@@ -29,4 +29,6 @@ return {
   { import = "astrocommunity.pack.toml" },
   -- docker
   { import = "astrocommunity.pack.docker" },
+  -- bash
+  { import = "astrocommunity.pack.bash" },
 }
