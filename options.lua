@@ -18,7 +18,7 @@ return {
     icons_enabled = true, -- disable icons in the UI (disable if no nerd font is available, requires :PackerSync after changing)
     ui_notifications_enabled = true, -- disable notifications when toggling UI elements
     resession_enabled = true, -- enable experimental resession.nvim session management (will be default in AstroNvim v4)
-    inlay_hints_enabled = false, -- disable inlay hints
+    inlay_hints_enabled = true, -- disable inlay hints
   },
 }
 -- If you need more control, you can use the function()...end notation
