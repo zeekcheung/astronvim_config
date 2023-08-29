@@ -19,6 +19,7 @@ return {
     ui_notifications_enabled = true, -- disable notifications when toggling UI elements
     resession_enabled = true, -- enable experimental resession.nvim session management (will be default in AstroNvim v4)
     inlay_hints_enabled = true, -- disable inlay hints
+    ts_organize_imports_on_save = true,
   },
 }
 -- If you need more control, you can use the function()...end notation
