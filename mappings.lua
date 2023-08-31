@@ -35,6 +35,10 @@ return {
     ["<C-s>"] = { ":w!<cr>", desc = "Save File" }, -- change description but the same command
     -- yank all text in file
     ["<C-a>"] = { ":%y+<cr>", desc = "Yank All" },
+    -- yank select text
+    ["<C-c>"] = { ":y+<cr>", desc = "Yank Select" },
+    -- paste from clipboard
+    ["C-v"] = { ":+p<cr>", desc = "Paste from Clipboard" },
     -- Open Alpha Automatically When No More Buffers
     ["<leader>c"] = {
       function()
@@ -44,7 +48,11 @@ return {
       end,
       desc = "Close buffer",
     },
+    -- find project
     ["<leader>fp"] = { "<cmd>Telescope projects<cr>", desc = "Find Projects" },
+    -- split window
+    ["\\"] = { "<cmd>vsplit<cr>", desc = "Vertical Split" },
+    ["|"] = { "<cmd>split<cr>", desc = "Horizontal Split" },
   },
   t = {
     -- setting a mapping to false will disable it
