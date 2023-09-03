@@ -25,7 +25,7 @@ return {
       button("LDR f w", get_icon("WordFile", 2, true) .. "Find Word  "),
       button("LDR f o", get_icon("DefaultFile", 2, true) .. "Find history "),
       button("LDR f p", get_icon("FolderClosed", 2, true) .. "Find Project  "),
-      button("LDR f '", get_icon("Bookmarks", 2, true) .. "Find Bookmark  "),
+      button("LDR f m", get_icon("Bookmarks", 2, true) .. "Find Bookmark  "),
       button("LDR S l", get_icon("Refresh", 2, true) .. "Last Session  "),
     }
 

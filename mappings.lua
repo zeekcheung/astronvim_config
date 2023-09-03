@@ -50,9 +50,15 @@ return {
     },
     -- find project
     ["<leader>fp"] = { "<cmd>Telescope projects<cr>", desc = "Find Projects" },
+    -- find manual pages
+    ["<leader>fM"] = { function() require("telescope.builtin").man_pages() end, desc = "Find man" },
     -- split window
     ["\\"] = { "<cmd>vsplit<cr>", desc = "Vertical Split" },
     ["|"] = { "<cmd>split<cr>", desc = "Horizontal Split" },
+    -- toggle horizontal terminal
+    ["`"] = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", desc = "ToggleTerm horizontal split" },
+    -- find marks
+    ["<leader>fm"] = { function() require("telescope.builtin").marks() end, desc = "Find marks" },
   },
   t = {
     -- setting a mapping to false will disable it
