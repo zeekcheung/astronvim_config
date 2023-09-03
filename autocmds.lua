@@ -5,4 +5,7 @@ if vim.g.neovide then require("user.utils.neovide").config() end
 require("user.utils.pwsh").config()
 
 -- config tsserver
-require("user.utils.tsp-utils").config()
+-- require("user.utils.tsp-utils").config()
+
+-- config rainbow-delimiters
+require("user.utils.rainbow-delimiters").config()
