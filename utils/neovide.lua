@@ -2,7 +2,7 @@ local M = {}
 
 M.config = function()
   -- font
-  vim.o.guifont = "RecMonoSemicasual Nerd Font"
+  vim.o.guifont = "RecMonoSemicasual Nerd Font:h17"
   -- padding
   vim.g.neovide_padding_top = 0
   vim.g.neovide_padding_bottom = 0
@@ -38,13 +38,13 @@ M.config = function()
   -- -- animation length
   -- vim.g.neovide_cursor_animation_length = 0.13
   -- -- animation trail size
-  -- vim.g.neovide_cursor_trail_size = 0.8
+  vim.g.neovide_cursor_trail_size = 0
   -- -- antialiasing
   -- vim.g.neovide_cursor_antialiasing = true
   -- -- animate in insert mode
   -- vim.g.neovide_cursor_animate_in_insert_mode = true
   -- cursor particles
-  vim.g.neovide_cursor_vfx_mode = "railgun"
+  -- vim.g.neovide_cursor_vfx_mode = "railgun"
   -- -- particle opacity
   -- vim.g.neovide_cursor_vfx_opacity = 200.0
   -- -- particle lifetime

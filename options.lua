@@ -4,7 +4,7 @@ return {
     -- set to true or false etc.
     relativenumber = true, -- sets vim.opt.relativenumber
     number = true, -- sets vim.opt.number
-    spell = true, -- sets vim.opt.spell
+    spell = false, -- sets vim.opt.spell
     signcolumn = "auto", -- sets vim.opt.signcolumn to auto
     wrap = false, -- sets vim.opt.wrap
     swapfile = false,
@@ -20,6 +20,7 @@ return {
     resession_enabled = true, -- enable experimental resession.nvim session management (will be default in AstroNvim v4)
     inlay_hints_enabled = true, -- disable inlay hints
     ts_organize_imports_on_save = true,
+    tpipeline_autoembed = 1,
   },
 }
 -- If you need more control, you can use the function()...end notation
