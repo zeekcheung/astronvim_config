@@ -55,10 +55,12 @@ return {
     -- split window
     ["\\"] = { "<cmd>vsplit<cr>", desc = "Vertical Split" },
     ["|"] = { "<cmd>split<cr>", desc = "Horizontal Split" },
-    -- toggle horizontal terminal
-    ["`"] = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", desc = "ToggleTerm horizontal split" },
     -- find marks
     ["<leader>fm"] = { function() require("telescope.builtin").marks() end, desc = "Find marks" },
+    -- toggle neovide fullscreen
+    ["<F11>"] = { function() require("user.utils.neovide").toggle_fullScreen() end, desc = "Toggle Neovide Fullscreen" },
+    -- toggle Trouble
+    ["<leader>uD"] = { "<cmd>TroubleToggle<cr>", desc = "Toggle Trouble" },
   },
   t = {
     -- setting a mapping to false will disable it

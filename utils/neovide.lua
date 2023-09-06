@@ -2,7 +2,7 @@ local M = {}
 
 M.config = function()
   -- font
-  vim.o.guifont = "JetBrainsMono Nerd Font:h16"
+  vim.o.guifont = "RecMonoSemicasual Nerd Font"
   -- padding
   vim.g.neovide_padding_top = 0
   vim.g.neovide_padding_bottom = 0
@@ -30,7 +30,7 @@ M.config = function()
   -- confirm quit
   vim.g.neovide_confirm_quit = true
   -- full screen
-  vim.g.neovide_fullscreen = true
+  vim.g.neovide_fullscreen = false
   -- remember previous windows size
   vim.g.neovide_remember_window_size = true
   -- profiler
@@ -58,5 +58,7 @@ M.config = function()
   -- -- particle curl
   -- vim.g.neovide_cursor_vfx_particle_curl = 1.0
 end
+
+M.toggle_fullScreen = function() vim.g.neovide_fullscreen = not vim.g.neovide_fullscreen end
 
 return M
