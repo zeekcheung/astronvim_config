@@ -61,6 +61,16 @@ return {
     ["<F11>"] = { function() require("user.utils.neovide").toggle_fullScreen() end, desc = "Toggle Neovide Fullscreen" },
     -- toggle Trouble
     ["<leader>uD"] = { "<cmd>TroubleToggle<cr>", desc = "Toggle Trouble" },
+    -- previous buffer
+    ["<"] = {
+      function() require("astronvim.utils.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end,
+      desc = "Next buffer",
+    },
+    -- next buffer
+    [">"] = {
+      function() require("astronvim.utils.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end,
+      desc = "Previous buffer",
+    },
   },
   t = {
     -- setting a mapping to false will disable it

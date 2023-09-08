@@ -23,7 +23,11 @@ return {
       "fish",
       "gitignore",
       "http",
+      "bash",
+      "markdown",
       "markdown_inline",
+      "regex",
+      "vim",
     })
   end,
 }

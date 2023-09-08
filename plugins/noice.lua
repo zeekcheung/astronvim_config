@@ -1,104 +1,75 @@
-local utils = require "astronvim.utils"
 return {
-  {
-    "nvim-treesitter/nvim-treesitter",
-    opts = function(_, opts)
-      if opts.ensure_installed ~= "all" then
-        opts.ensure_installed =
-          utils.list_insert_unique(opts.ensure_installed, { "bash", "markdown", "markdown_inline", "regex", "vim" })
-      end
-    end,
-  },
-  {
-    "folke/noice.nvim",
-    event = "VeryLazy",
-    -- cond = not vim.g.neovide,
-    dependencies = { "MunifTanjim/nui.nvim" },
-    opts = {
-      lsp = {
-        -- override markdown rendering so that **cmp** and other plugins use **Treesitter**
-        override = {
-          ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
-          ["vim.lsp.util.stylize_markdown"] = true,
-          ["cmp.entry.get_documentation"] = true,
+  "folke/noice.nvim",
+  event = "VeryLazy",
+  cond = not vim.g.neovide,
+  dependencies = { "MunifTanjim/nui.nvim" },
+  opts = {
+    lsp = {
+      -- override markdown rendering so that **cmp** and other plugins use **Treesitter**
+      override = {
+        ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
+        ["vim.lsp.util.stylize_markdown"] = true,
+        ["cmp.entry.get_documentation"] = true,
+      },
+    },
+    presets = {
+      bottom_search = true, -- use a classic bottom cmdline for search
+      command_palette = true, -- position the cmdline and popupmenu together
+      long_message_to_split = true, -- long messages will be sent to a split
+      inc_rename = false, -- enables an input dialog for inc-rename.nvim
+      lsp_doc_border = true, -- add a border to hover docs and signature help
+    },
+    -- display the cmdline and popupmenu together
+    views = {
+      cmdline_popup = {
+        position = {
+          row = 5,
+          col = "50%",
+        },
+        size = {
+          width = 60,
+          height = "auto",
         },
       },
-      presets = {
-        bottom_search = true, -- use a classic bottom cmdline for search
-        command_palette = true, -- position the cmdline and popupmenu together
-        long_message_to_split = true, -- long messages will be sent to a split
-        inc_rename = false, -- enables an input dialog for inc-rename.nvim
-        lsp_doc_border = false, -- add a border to hover docs and signature help
-      },
-      -- display the cmdline and popupmenu together
-      views = {
-        cmdline_popup = {
-          position = {
-            row = 5,
-            col = "50%",
-          },
-          size = {
-            width = 60,
-            height = "auto",
-          },
+      popupmenu = {
+        relative = "editor",
+        position = {
+          row = 8,
+          col = "50%",
         },
-        popupmenu = {
-          relative = "editor",
-          position = {
-            row = 8,
-            col = "50%",
-          },
-          size = {
-            width = 60,
-            height = 10,
-          },
-          border = {
-            style = "rounded",
-            padding = { 0, 1 },
-          },
-          win_options = {
-            winhighlight = { Normal = "Normal", FloatBorder = "DiagnosticInfo" },
-          },
+        size = {
+          width = 60,
+          height = 10,
         },
-      },
-      routes = {
-        -- hide written messages
-        {
-          filter = {
-            event = "msg_show",
-            kind = "",
-
-            find = "written",
-          },
-          opts = { skip = true },
+        border = {
+          style = "rounded",
+          padding = { 0, 1 },
         },
-        -- hide search virtual text
-        {
-          filter = {
-            event = "msg_show",
-            kind = "search_count",
-          },
-          opts = { skip = true },
+        win_options = {
+          winhighlight = { Normal = "Normal", FloatBorder = "DiagnosticInfo" },
         },
       },
     },
-    init = function() vim.g.lsp_handlers_enabled = false end,
+    routes = {
+      -- hide written messages
+      {
+        filter = {
+          event = "msg_show",
+          kind = "",
+
+          find = "written",
+        },
+        opts = { skip = true },
+      },
+      -- hide search virtual text
+      {
+        filter = {
+          event = "msg_show",
+          kind = "search_count",
+        },
+        opts = { skip = true },
+      },
+    },
   },
-  {
-    "folke/edgy.nvim",
-    optional = true,
-    opts = function(_, opts)
-      if not opts.bottom then opts.bottom = {} end
-      table.insert(opts.bottom, {
-        ft = "noice",
-        size = { height = 0.4 },
-        filter = function(_, win) return vim.api.nvim_win_get_config(win).relative == "" end,
-      })
-    end,
-  },
-  {
-    "catppuccin/nvim",
-    optional = true,
-    opts = { integrations = { noice = true } },
-  },
+  init = function() vim.g.lsp_handlers_enabled = false end,
 }
