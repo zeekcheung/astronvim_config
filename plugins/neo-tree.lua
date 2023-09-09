@@ -15,5 +15,16 @@ return {
         never_show = {},
       },
     },
+    event_handlers = {
+      {
+        event = require("neo-tree.events").FILE_ADDED,
+        handler = function(file_path)
+          -- open file
+          vim.cmd("edit " .. file_path)
+          -- close explorer
+          vim.cmd "Neotree close"
+        end,
+      },
+    },
   },
 }
