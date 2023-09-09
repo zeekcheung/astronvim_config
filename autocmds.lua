@@ -9,3 +9,6 @@ require("user.utils.pwsh").config()
 
 -- config rainbow-delimiters
 require("user.utils.rainbow-delimiters").config()
+
+-- config neo-tree
+require("user.utils.neotree").config()

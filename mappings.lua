@@ -52,11 +52,13 @@ return {
     ["<leader>fp"] = { "<cmd>Telescope projects<cr>", desc = "Find Projects" },
     -- find manual pages
     ["<leader>fM"] = { function() require("telescope.builtin").man_pages() end, desc = "Find man" },
+    -- find marks
+    ["<leader>fm"] = { function() require("telescope.builtin").marks() end, desc = "Find marks" },
+    -- find diagnostics
+    ["<leader>fd"] = { "<cmd>Telescope diagnostics severity_bound=ERROR<cr>", desc = "Find diagnostics" },
     -- split window
     ["\\"] = { "<cmd>vsplit<cr>", desc = "Vertical Split" },
     ["|"] = { "<cmd>split<cr>", desc = "Horizontal Split" },
-    -- find marks
-    ["<leader>fm"] = { function() require("telescope.builtin").marks() end, desc = "Find marks" },
     -- toggle neovide fullscreen
     ["<F11>"] = { function() require("user.utils.neovide").toggle_fullScreen() end, desc = "Toggle Neovide Fullscreen" },
     -- toggle Trouble

@@ -1,7 +1,8 @@
 return {
   "folke/noice.nvim",
   event = "VeryLazy",
-  cond = not vim.g.neovide,
+  -- cond = not vim.g.neovide,
+  cond = false,
   dependencies = { "MunifTanjim/nui.nvim" },
   opts = {
     lsp = {
