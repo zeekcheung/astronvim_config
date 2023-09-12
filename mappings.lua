@@ -5,7 +5,7 @@
 -- lower level configuration and more robust one. (which-key will
 -- automatically pick-up stored data by this setting.)
 return {
-  -- first key is the mode
+  -- normal mode
   n = {
     -- second key is the lefthand side of the map
 
@@ -31,14 +31,16 @@ return {
     -- -- tables with the `name` key will be registered with which-key if it's installed
     -- this is useful for naming menus
     ["<leader>b"] = { name = "Buffers" },
-    -- quick save
-    ["<C-s>"] = { ":w!<cr>", desc = "Save File" }, -- change description but the same command
-    -- yank all text in file
-    ["<C-a>"] = { ":%y+<cr>", desc = "Yank All" },
-    -- yank select text
-    ["<C-c>"] = { ":y+<cr>", desc = "Yank Select" },
-    -- paste from clipboard
-    ["C-v"] = { ":+p<cr>", desc = "Paste from Clipboard" },
+    -- previous buffer
+    ["H"] = {
+      function() require("astronvim.utils.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end,
+      desc = "Next buffer",
+    },
+    -- next buffer
+    ["L"] = {
+      function() require("astronvim.utils.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end,
+      desc = "Previous buffer",
+    },
     -- Open Alpha Automatically When No More Buffers
     ["<leader>c"] = {
       function()
@@ -48,6 +50,21 @@ return {
       end,
       desc = "Close buffer",
     },
+
+    -- quick save
+    ["<C-s>"] = { ":w!<cr>", desc = "Save File" }, -- change description but the same command
+    -- select all text in file
+    ["<C-a>"] = { "ggVG", desc = "Select All" },
+    -- paste from clipboard
+    ["C-v"] = { ":+p<cr>", desc = "Paste from Clipboard" },
+    -- undo
+    ["C-z"] = { "u", desc = "Undo" },
+    -- goto line start
+    ["gs"] = { "^", desc = "Goto line start" },
+
+    -- clear search with <esc>
+    ["<esc>"] = { "<cmd>noh<cr><esc>", desc = "Escape and clear hlsearchA," },
+
     -- find project
     ["<leader>fp"] = { "<cmd>Telescope projects<cr>", desc = "Find Projects" },
     -- find manual pages
@@ -63,16 +80,36 @@ return {
     ["<F11>"] = { function() require("user.utils.neovide").toggle_fullScreen() end, desc = "Toggle Neovide Fullscreen" },
     -- toggle Trouble
     ["<leader>uD"] = { "<cmd>TroubleToggle<cr>", desc = "Toggle Trouble" },
-    -- previous buffer
-    ["<"] = {
-      function() require("astronvim.utils.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end,
-      desc = "Next buffer",
-    },
-    -- next buffer
-    [">"] = {
-      function() require("astronvim.utils.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end,
-      desc = "Previous buffer",
-    },
+  },
+  -- visual mode
+  v = {
+    -- save file
+    ["<C-s>"] = { "<cmd>w<cr><esc>", desc = "Save File" },
+    -- select all text in file
+    ["<C-a>"] = { "ggVG", desc = "Select All" },
+    -- goto line start
+    ["gs"] = { "^", desc = "Goto line start" },
+  },
+  -- visula line mode
+  x = {
+    -- save file
+    ["<C-s>"] = { "<cmd>w<cr><esc>", desc = "Save File" },
+    -- select all text in file
+    ["<C-a>"] = { "ggVG", desc = "Select All" },
+    -- goto line start
+    ["gs"] = { "^", desc = "Goto line start" },
+  },
+  -- insert mode
+  i = {
+    -- save file
+    ["<C-s>"] = { "<cmd>w<cr><esc>", desc = "Save File" },
+    -- select all text in file
+    ["<C-a>"] = { "ggVG", desc = "Select All" },
+    -- undeo
+    ["C-z"] = { "<esc>u", desc = "Undo" },
+
+    -- clear search with <esc>
+    ["<esc>"] = { "<cmd>noh<cr><esc>", desc = "Escape and clear hlsearchA," },
   },
   t = {
     -- setting a mapping to false will disable it
