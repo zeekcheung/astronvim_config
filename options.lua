@@ -21,6 +21,7 @@ return {
     inlay_hints_enabled = true, -- disable inlay hints
     ts_organize_imports_on_save = true,
     tpipeline_autoembed = 1,
+    noice_enable = true,
   },
 }
 -- If you need more control, you can use the function()...end notation
