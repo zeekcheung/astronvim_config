@@ -34,13 +34,22 @@ return {
     ["C-v"] = { ":+p<cr>", desc = "Paste from Clipboard" },
     -- undo
     ["C-z"] = { "u", desc = "Undo" },
+    -- goto line
+    ["gl"] = { name = "Goto line" },
     -- goto line start
-    ["gs"] = { "^", desc = "Goto line start" },
+    ["gls"] = { "^", desc = "Goto line start" },
+    -- goto line end
+    ["gle"] = { "$", desc = "Goto line end" },
     -- clear search with <esc>
     ["<esc>"] = { "<cmd>noh<cr><esc>", desc = "Escape and clear hlsearchA," },
 
     -- AstroNvim
     ["<leader>A"] = { name = get_icon("ActiveLSP", 1, true) .. "AstroNvim" },
+    -- config
+    ["<leader>Ac"] = {
+      ":lua require('user.utils.astronvim').find_config_files() <cr>",
+      desc = get_icon("ActiveLSP", 1, true) .. "Open Config files",
+    },
     -- version
     ["<leader>Av"] = { "<cmd>AstroVersion", desc = "AstroVersion" },
     -- reload
@@ -48,7 +57,7 @@ return {
     -- update
     ["<leader>Au"] = { "<cmd>AstroUpdate", desc = "AstroUpdate" },
     -- changelog
-    ["<leader>Ac"] = { "<cmd>AstroChangelog", desc = "AstroChangelog" },
+    ["<leader>Al"] = { "<cmd>AstroChangelog", desc = "AstroChangelog" },
     -- rollback
     ["<leader>AR"] = { "<cmd>AstroRollback", desc = "AstroRollback" },
 
@@ -78,12 +87,14 @@ return {
     ["|"] = { "<cmd>split<cr>", desc = "Horizontal Split" },
 
     -- Find
+    -- find autocommands
+    ["<leader>fa"] = { "<cmd>Telescope autocommands<cr>", desc = "Find autocommands" },
     -- find project
-    ["<leader>fp"] = { "<cmd>Telescope projects<cr>", desc = "Find Projects" },
+    ["<leader>fp"] = { "<cmd>Telescope projects<cr>", desc = "Find projects" },
     -- find manual pages
-    ["<leader>fM"] = { function() require("telescope.builtin").man_pages() end, desc = "Find man" },
+    ["<leader>fM"] = { "<cmd>Telescope man_pages<cr>", desc = "Find man" },
     -- find marks
-    ["<leader>fm"] = { function() require("telescope.builtin").marks() end, desc = "Find marks" },
+    ["<leader>fm"] = { "<cmd>Telescope marks<cr>", desc = "Find marks" },
     -- find diagnostics
     ["<leader>fd"] = { "<cmd>Telescope diagnostics severity_bound=ERROR<cr>", desc = "Find diagnostics" },
 
@@ -117,8 +128,12 @@ return {
     ["<C-s>"] = { "<cmd>w<cr><esc>", desc = "Save File" },
     -- select all text in file
     ["<C-a>"] = { "ggVG", desc = "Select All" },
+    -- goto line
+    ["gl"] = { name = "Goto line" },
     -- goto line start
-    ["gs"] = { "^", desc = "Goto line start" },
+    ["gls"] = { "^", desc = "Goto line start" },
+    -- goto line end
+    ["gle"] = { "$", desc = "Goto line end" },
   },
   -- visula line mode
   x = {
@@ -126,8 +141,12 @@ return {
     ["<C-s>"] = { "<cmd>w<cr><esc>", desc = "Save File" },
     -- select all text in file
     ["<C-a>"] = { "ggVG", desc = "Select All" },
+    -- goto line
+    ["gl"] = { name = "Goto line" },
     -- goto line start
-    ["gs"] = { "^", desc = "Goto line start" },
+    ["gls"] = { "^", desc = "Goto line start" },
+    -- goto line end
+    ["gle"] = { "$", desc = "Goto line end" },
   },
   -- insert mode
   i = {
