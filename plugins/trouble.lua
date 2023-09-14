@@ -12,7 +12,6 @@ return {
     fold_closed = "", -- icon used for closed folds
     group = true, -- group results by file
     padding = true, -- add an extra new line on top of the list
-
     cycle_results = true, -- cycle item list when reaching beginning or end of list
     action_keys = { -- key mappings for actions in the trouble list
       -- map to {} to remove a mapping, for example:
@@ -34,12 +33,10 @@ return {
       close_folds = { "zM", "zm" }, -- close all folds
       open_folds = { "zR", "zr" }, -- open all folds
       toggle_fold = { "zA", "za" }, -- toggle fold of current file
-
       previous = "k", -- previous item
       next = "j", -- next item
       help = "?", -- help menu
     },
-
     multiline = true, -- render multi-line messages
     indent_lines = true, -- add an indent guide below the fold icons
     win_config = { border = "single" }, -- window configuration for floating windows. See |nvim_open_win()|.

@@ -1,6 +1,5 @@
 return {
   "onsails/lspkind.nvim",
-
   opts = function(_, opts)
     -- use codicons preset
     opts.preset = "codicons"

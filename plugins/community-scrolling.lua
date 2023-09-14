@@ -1,3 +1,3 @@
 return {
-  { import = "astrocommunity.scrolling.nvim-scrollbar" }
+  { import = "astrocommunity.scrolling.nvim-scrollbar" },
 }

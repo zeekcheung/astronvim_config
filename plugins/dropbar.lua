@@ -8,7 +8,6 @@ return {
   {
     "catppuccin/nvim",
     optional = true,
-
     opts = { integrations = { dropbar = { enabled = true } } },
   },
 }
