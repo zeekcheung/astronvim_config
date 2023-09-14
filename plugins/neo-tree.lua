@@ -1,6 +1,10 @@
 return {
   "nvim-neo-tree/neo-tree.nvim",
   opts = {
+    source_selector = {
+      winbar = true,
+      content_layout = "center",
+    },
     filesystem = {
       filtered_items = {
         visible = true,
@@ -17,7 +21,7 @@ return {
     },
     event_handlers = {
       {
-        event = require("neo-tree.events").FILE_ADDED,
+        event = "file_added",
         handler = function(file_path)
           -- open file
           vim.cmd("edit " .. file_path)
