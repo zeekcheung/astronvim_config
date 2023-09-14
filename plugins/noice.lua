@@ -2,7 +2,9 @@ return {
   "folke/noice.nvim",
   event = "VeryLazy",
   cond = vim.g.noice_enable,
-  dependencies = { "MunifTanjim/nui.nvim" },
+  dependencies = {
+    "MunifTanjim/nui.nvim",
+  },
   opts = {
     lsp = {
       -- override markdown rendering so that **cmp** and other plugins use **Treesitter**
@@ -10,6 +12,18 @@ return {
         ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
         ["vim.lsp.util.stylize_markdown"] = true,
         ["cmp.entry.get_documentation"] = true,
+      },
+      progress = {
+        enabled = false,
+        -- Lsp Progress is formatted using the builtins for lsp_progress. See config.format.builtin
+        -- See the section on formatting for more details on how to customize.
+        --- @type NoiceFormat|string
+        format = "lsp_progress",
+
+        --- @type NoiceFormat|string
+        format_done = "lsp_progress_done",
+        throttle = 1000 / 30, -- frequency to update lsp progress message
+        view = "mini",
       },
     },
     presets = {
@@ -19,37 +33,6 @@ return {
       inc_rename = true, -- enables an input dialog for inc-rename.nvim
       lsp_doc_border = true, -- add a border to hover docs and signature help
     },
-    -- display the cmdline and popupmenu together
-    -- views = {
-    --   cmdline_popup = {
-    --     position = {
-    --       row = 5,
-    --       col = "50%",
-    --     },
-    --     size = {
-    --       width = 60,
-    --       height = "auto",
-    --     },
-    --   },
-    --   popupmenu = {
-    --     relative = "editor",
-    --     position = {
-    --       row = 8,
-    --       col = "50%",
-    --     },
-    --     size = {
-    --       width = 60,
-    --       height = 10,
-    --     },
-    --     border = {
-    --       style = "rounded",
-    --       padding = { 0, 1 },
-    --     },
-    --     win_options = {
-    --       winhighlight = { Normal = "Normal", FloatBorder = "DiagnosticInfo" },
-    --     },
-    --   },
-    -- },
     routes = {
       -- hide written messages
       {
