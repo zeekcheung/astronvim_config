@@ -6,3 +6,5 @@ require("user.utils.pwsh").config()
 require("user.utils.rainbow-delimiters").config()
 -- config indent-blankline
 require("user.utils.indent-blankline").config()
+-- config codeium
+require("user.utils.codeium").config()
