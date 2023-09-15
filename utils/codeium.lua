@@ -28,7 +28,7 @@ end
 function M.heirline_component(opts)
   opts = extend_tbl({
     init = function(self) self.state = M.get_state() end,
-    provider = function(self) return utils.get_icon("DiagnosticHint", 1) .. "Codeium " .. self.state end,
+    provider = function(self) return utils.get_icon "Codeium" .. self.state end,
     update = {
       M.event,
       pattern = M.pattern,

@@ -18,6 +18,9 @@ return {
         },
         never_show = {},
       },
+      bind_to_cwd = false,
+      follow_current_file = { enabled = true },
+      use_libuv_file_watcher = true,
     },
     event_handlers = {
       {
