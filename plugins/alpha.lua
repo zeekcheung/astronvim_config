@@ -24,7 +24,7 @@ return {
     dashboard.section.buttons.val = {
       button("n", get_icon("FileNew", 2, true) .. "New File  ", ":ene <BAR> startinsert <CR>"),
       button("f", get_icon("Search", 2, true) .. "Find Files  ", ":Telescope find_files<CR>"),
-      button("w", get_icon("WordFile", 2, true) .. "Find Words  ", ":Telescope live_grep<CR>"),
+      -- button("w", get_icon("WordFile", 2, true) .. "Find Words  ", ":Telescope live_grep<CR>"),
       button("o", get_icon("DefaultFile", 2, true) .. "Find Oldfiles ", ":Telescope oldfiles<CR>"),
       button("p", get_icon("FolderClosed", 2, true) .. "Find Projects  ", ":Telescope projects<CR>"),
       button("m", get_icon("Bookmarks", 2, true) .. "Find Bookmarks  ", ":Telescope marks<CR>"),
@@ -38,8 +38,8 @@ return {
         get_icon("ActiveLSP", 2, true) .. "Config  ",
         [[:lua require("user.utils.astronvim").find_config_files() <cr>]]
       ),
-      button("l", get_icon("Package", 2, true) .. "Lazy  ", ":Lazy<CR>"),
-      button("q", get_icon("DapStopped", 2, true) .. "Quit  ", ":qa<CR>"),
+      button("l", get_icon("Lazy", 2, true) .. "Lazy  ", ":Lazy<CR>"),
+      button("q", get_icon("Quit", 2, true) .. "Quit  ", ":qa<CR>"),
     }
     for _, _button in ipairs(dashboard.section.buttons.val) do
       _button.opts.hl = "DashboardCenter"
