@@ -13,7 +13,7 @@ local updater = {
     --   ["remote_name"] = "https://remote_url.come/repo.git", -- full remote url
     --   ["remote2"] = "github_user/repo", -- GitHub user/repo shortcut,
     --   ["remote3"] = "github_user", -- GitHub user assume AstroNvim fork
-    -- ["AstroNvim"] = "https://github.com/AstroNvim/AstroNvim.git",
+    ["AstroNvim"] = "https://github.com/AstroNvim/AstroNvim.git",
   },
 }
 

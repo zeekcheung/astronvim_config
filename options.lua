@@ -19,9 +19,8 @@ return {
     ui_notifications_enabled = false, -- disable notifications when toggling UI elements
     resession_enabled = true, -- enable experimental resession.nvim session management (will be default in AstroNvim v4)
     inlay_hints_enabled = true, -- enable inlay hints
-    tpipeline_autoembed = 1, -- enable tpipeline_autoembed
-    noice_enable = true, -- enable noice.nvim
     indent_blankline_highlight = false, -- disable indent blankline hightlight
+    noice_enable = true, -- enable noice.nvim
   },
 }
 -- If you need more control, you can use the function()...end notation
