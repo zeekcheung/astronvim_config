@@ -1,37 +1,24 @@
 return {
-  "Exafunction/codeium.vim",
-  event = "User AstroFile",
-  config = function()
-    vim.keymap.set(
-      "i",
-      "<C-g>",
-      function() return vim.fn["codeium#Accept"]() end,
-      { expr = true, desc = "Accept Codeium suggestion" }
-    )
-    vim.keymap.set(
-      "i",
-      "<c-;>",
-      function() return vim.fn["codeium#CycleCompletions"](1) end,
-      { expr = true, desc = "Next Codeium suggestion" }
-    )
-    vim.keymap.set(
-      "i",
-      "<c-,>",
-      function() return vim.fn["codeium#CycleCompletions"](-1) end,
-      { expr = true, desc = "Previous Codeium suggestion" }
-    )
-    vim.keymap.set(
-      "i",
-      "<c-x>",
-      function() return vim.fn["codeium#Clear"]() end,
-      { expr = true, desc = "Clear Codeium suggestion" }
-    )
-    vim.keymap.set("n", "<leader>;", function()
-      if vim.g.codeium_enabled == true then
-        vim.cmd "CodeiumDisable"
-      else
-        vim.cmd "CodeiumEnable"
-      end
-    end, { noremap = true, desc = "Toggle Codeium active" })
-  end,
+  {
+    "Exafunction/codeium.vim",
+    enabled = true,
+    event = "User AstroFile",
+    config = function()
+      -- Change '<C-g>' here to any keycode you like.
+      vim.keymap.set("i", "<C-g>", function() return vim.fn["codeium#Accept"]() end, { expr = true })
+      vim.keymap.set("i", "<c-.>", function() return vim.fn["codeium#CycleCompletions"](1) end, { expr = true })
+      vim.keymap.set("i", "<c-,>", function() return vim.fn["codeium#CycleCompletions"](-1) end, { expr = true })
+      vim.keymap.set("i", "<c-x>", function() return vim.fn["codeium#Clear"]() end, { expr = true })
+    end,
+  },
+  {
+    "Exafunction/codeium.nvim",
+    enabled = false,
+    event = "User AstroFile",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "hrsh7th/nvim-cmp",
+    },
+    config = function() require("codeium").setup {} end,
+  },
 }

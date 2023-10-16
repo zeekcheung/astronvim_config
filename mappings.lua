@@ -1,5 +1,4 @@
 -- Mapping data with "desc" stored directly by vim.keymap.set().
---
 -- Please use this mappings table to set keyboard mapping since this is the
 
 -- lower level configuration and more robust one. (which-key will
@@ -27,13 +26,9 @@ return {
     ["<leader>S."] = false,
 
     -- quick save
-    ["<C-s>"] = { ":w!<cr>", desc = "Save File" }, -- change description but the same command
+    ["<C-s>"] = { ":w!<cr>", desc = "Save File", silent = true }, -- change description but the same command
     -- select all text in file
-    ["<C-a>"] = { "ggVG", desc = "Select All" },
-    -- paste from clipboard
-    ["C-v"] = { ":+p<cr>", desc = "Paste from Clipboard" },
-    -- undo
-    ["C-z"] = { "u", desc = "Undo" },
+    ["<C-a>"] = { "ggVG", desc = "Select All", silent = true },
     -- goto line
     ["gl"] = { name = "Goto line" },
     -- goto line start
@@ -125,9 +120,9 @@ return {
   -- visual mode
   v = {
     -- save file
-    ["<C-s>"] = { "<cmd>w<cr><esc>", desc = "Save File" },
+    ["<C-s>"] = { "<cmd>w<cr><esc>", desc = "Save File", silent = true },
     -- select all text in file
-    ["<C-a>"] = { "ggVG", desc = "Select All" },
+    ["<C-a>"] = { "ggVG", desc = "Select All", silent = true },
     -- goto line
     ["gl"] = { name = "Goto line" },
     -- goto line start
@@ -138,9 +133,9 @@ return {
   -- visula line mode
   x = {
     -- save file
-    ["<C-s>"] = { "<cmd>w<cr><esc>", desc = "Save File" },
+    ["<C-s>"] = { "<cmd>w<cr><esc>", desc = "Save File", silent = true },
     -- select all text in file
-    ["<C-a>"] = { "ggVG", desc = "Select All" },
+    ["<C-a>"] = { "ggVG", desc = "Select All", silent = true },
     -- goto line
     ["gl"] = { name = "Goto line" },
     -- goto line start
@@ -151,11 +146,9 @@ return {
   -- insert mode
   i = {
     -- save file
-    ["<C-s>"] = { "<cmd>w<cr><esc>", desc = "Save File" },
+    ["<C-s>"] = { "<cmd>w<cr><esc>", desc = "Save File", silent = true },
     -- select all text in file
-    ["<C-a>"] = { "ggVG", desc = "Select All" },
-    -- undeo
-    ["C-z"] = { "<esc>u", desc = "Undo" },
+    ["<C-a>"] = { "ggVG", desc = "Select All", silent = true },
 
     -- clear search with <esc>
     ["<esc>"] = { "<cmd>noh<cr><esc>", desc = "Escape and clear hlsearchA," },

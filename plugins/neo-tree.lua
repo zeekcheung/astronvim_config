@@ -2,7 +2,7 @@ return {
   "nvim-neo-tree/neo-tree.nvim",
   opts = {
     source_selector = {
-      winbar = true,
+      winbar = false,
       content_layout = "center",
     },
     filesystem = {
@@ -18,19 +18,25 @@ return {
         },
         never_show = {},
       },
-      bind_to_cwd = false,
-      follow_current_file = { enabled = true },
+      bind_to_cwd = true,
+      follow_current_file = { enabled = false },
       use_libuv_file_watcher = true,
     },
     event_handlers = {
       {
         event = "file_added",
         handler = function(file_path)
-          -- open file
-          vim.cmd("edit " .. file_path)
-          -- close explorer
-          vim.cmd "Neotree close"
+          -- vim.cmd("edit " .. file_path .. "| startinsert!")
+          -- vim.cmd("Neotree Toggle")
         end,
+      },
+    },
+    window = {
+      mappings = {
+        ["H"] = "prev_source",
+        ["L"] = "next_source",
+        ["s"] = "none", -- disable default mappings
+        ["<leftrelease>"] = "open", -- open node with single left click
       },
     },
   },

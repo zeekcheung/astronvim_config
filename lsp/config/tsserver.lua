@@ -11,6 +11,7 @@ return {
         includeInlayParameterNameHintsWhenArgumentMatchesName = true,
         includeInlayPropertyDeclarationTypeHints = true,
         includeInlayVariableTypeHints = true,
+        includeInlayVariableTypeHintsWhenTypeMatchesName = true,
       },
     },
     typescript = {
@@ -22,6 +23,7 @@ return {
         includeInlayParameterNameHintsWhenArgumentMatchesName = true,
         includeInlayPropertyDeclarationTypeHints = true,
         includeInlayVariableTypeHints = true,
+        includeInlayVariableTypeHintsWhenTypeMatchesName = true,
       },
     },
     codeActionsOnSave = {

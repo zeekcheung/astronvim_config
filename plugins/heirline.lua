@@ -29,6 +29,8 @@ return {
       status.component.nav { ruler = { padding = { left = 0 } } },
       -- remove the 2nd mode indicator on the right
     }
+
+    opts.winbar = nil -- disable winbar
     -- return the final configuration table
     return opts
   end,

@@ -1,5 +1,5 @@
 -- customize lsp formatting options
-local formatting = {
+return {
   -- control auto formatting on save
   format_on_save = {
     enabled = true, -- enable or disable format on save globally
@@ -20,5 +20,3 @@ local formatting = {
   --   return true
   -- end
 }
-
-return formatting

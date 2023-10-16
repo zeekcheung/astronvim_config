@@ -52,17 +52,6 @@ function M.heirline_component(opts)
   return require("astronvim.utils.status.component").builder(status_utils.setup_providers(opts, {}))
 end
 
-M.config = function()
-  if M.is_available() then
-    vim.api.nvim_create_augroup("codeium", { clear = true })
-    vim.api.nvim_create_autocmd(M.event, {
-      group = "codeium",
-      pattern = M.pattern,
-      callback = function() end,
-    })
-  end
-end
-
 M.trigger_event = function() vim.cmd("doautocmd " .. M.event .. " " .. M.pattern) end
 
 return M
